@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="stylesheet.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Rental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #103f5ecd;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        select, input[type="text"], input[type="email"], button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #6294c3;
+            color: black;
+            border: 50%;
+            cursor: pointer;
+            
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        li {
+            padding: 10px;
+            background: #eee;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        .receipt {
+            margin-top: 20px;
+            padding: 15px;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            color: #155724;
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="date"></p>
+    </div>
+    <div class="container">
+        <h1>Movie Rental</h1>
+        
+        <h2>Available Movies</h2>
+        <ul>
+            <li>Moana 2</li>
+            <li>Deadpoop x Wolverine</li>
+            <li>Avengers: Endgame</li>
+            <li>Starwars</li>
+            <li>Interstellar</li>
+        </ul>
+        
+        <h2>Rent a Movie</h2>
+        <form id="rentalForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <label for="Email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter you email" required>
+            
+            <label for="movie">Select a Movie</label>
+                <select id="movie" name="movie" required>
+                <option value="">Movies</option>
+                <option value="Moana 2">Moana 2</option>
+                <option value="Deadpool x Wolverine">Deadpool x Wolverine</option>
+                <option value="Avengers: Endgame">Avengers: Endgame</option>
+                <option value="Starwars">Starwars</option>
+                <option value="Interstellar">Interstellar</option>
+            </select>
+            
+            <button type="button" onclick="generateReceipt()">Rent Movie</button>
+            <button type="reset">Clear Form</button>
+        </form>
+        
+        <div class="receipt" id="receipt">
+            <h2>Receipt</h2>
+            <p id="receiptContent"></p>
+        </div>
+    </div>
+    
+    
+</body>
+
+</html>
